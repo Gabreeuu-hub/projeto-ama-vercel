@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "./Login.module.css";
+import styles from "./Login.module.css";
 import Axios from "axios";
 
 // Import dos assets
@@ -59,40 +59,39 @@ const Login = () => {
   };
 
   return (
-    <div className="loginPage flex">
-      <div className="container flex">
-        <div className="videoDiv">
+    <div className={`${styles.loginPage} ${styles.flex}`}>
+      <div className={`${styles.container} ${styles.flex}`}>
+        <div className={`${styles.videoDiv}`}>
           <video src={video} autoPlay muted loop></video>
-
-          <div className="textDiv">
-            <h2 className="title">Na AMA</h2>
+          <div className={`${styles.textDiv}`}>
+            <h2 className={`${styles.title}`}>Na AMA</h2>
             <p>Cada gota faz diferença</p>
           </div>
-
-          <div className="footerDiv flex">
-            <span className="text">Não tem conta?</span>
+          
+          <div className={`${styles.footerDiv} ${styles.flex}`}>
+            <span className={`${styles.text}`}>Não tem conta?</span>
             <Link to={"/cadastro-usuario"}>
-              <button className="btn users">Seja Usuário</button>
+              <button className={`${styles.btn} ${styles.users}`}>Seja Usuário</button>
             </Link>
             <Link to={"/cadastro-profissional"}>
-              <button className="btn profs">Seja Profissional</button>
+              <button className={`${styles.btn} ${styles.profs}`}>Seja Profissional</button>
             </Link>
           </div>
         </div>
 
-        <div className="formDiv flex">
-          <div className="headerDiv">
+        <div className={`${styles.formDiv} ${styles.flex}`}>
+          <div className={`${styles.headerDiv}`}>
             <img src={logo} alt="Logo Image" />
             <h3>Bem vindo(a) de volta!</h3>
           </div>
 
-          <form action="" className="form grid" onSubmit={onSubmit}>
+          <form action="" className={`${styles.form} ${styles.grid}`} onSubmit={onSubmit}>
             <span className={statusHolder}>{loginStatus}</span>
 
-            <div className="inputDiv">
+            <div className={`${styles.inputDiv}`}>
               <label htmlFor="username">Email</label>
-              <div className="input flex">
-                <FaUserShield className="icon" />
+              <div className={`${styles.input} ${styles.flex}`}>
+                <FaUserShield className={`${styles.icon}`}/>
                 <input
                   type="text"
                   id="username"
@@ -105,10 +104,10 @@ const Login = () => {
               </div>
             </div>
 
-            <div className="inputDiv">
+            <div className={`${styles.inputDiv}`}>
               <label htmlFor="password">Senha</label>
-              <div className="input flex">
-                <BsFillShieldLockFill className="icon" />
+              <div className={`${styles.input} ${styles.flex}`}>
+                <BsFillShieldLockFill className={`${styles.icon}`}/>
                 <input
                   type="password"
                   id="password"
@@ -120,9 +119,9 @@ const Login = () => {
               </div>
             </div>
 
-            <button type="submit" className="btn flex" onClick={loginUser}>
+            <button type="submit" className={`${styles.btn} ${styles.flex}`} onClick={loginUser}>
               <span>Entrar</span>
-              <AiOutlineSwapRight className="icon" />
+              <AiOutlineSwapRight className={`${styles.icon}`}/>
             </button>
 
             <span className="forgotPassword">

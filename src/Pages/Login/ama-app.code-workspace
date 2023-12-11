@@ -1,10 +1,8 @@
 {
 	"folders": [
 		{
+			"name": "ama-app",
 			"path": "../../.."
-		},
-		{
-			"path": "../../../../../LoginRegister/server"
 		}
 	],
 	"settings": {}
